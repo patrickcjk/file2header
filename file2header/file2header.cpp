@@ -57,32 +57,26 @@ std::string generate_header(std::vector<uint8_t>& in_buffer, int bytes_per_line)
     std::string header;
     header.append("#include <cstdint>\n\n");
     header.append("const uint8_t image[] = \n");
-    header.append("{\n");
+    header.append("{");
 
     int counter = 0;
     for (uint8_t current_char : in_buffer)
     {
-        if (counter == 0)
-        {
-            header.append("    ");
-            counter++;
-        }
-        else if (counter == bytes_per_line)
-        {
-            header.append("\n");
-            counter = 0;
-        }
-        else
-        {
-            char hex_string[10];
-            sprintf_s(hex_string, "0x%02X", current_char);
-            header.append(hex_string);
+        if (counter % 25 == 0)
+            header.append("\n    ");
+
+        char hex_string[10];
+        sprintf_s(hex_string, "0x%02X", current_char);
+        
+        header.append(hex_string);
+
+        if (counter != in_buffer.size() - 1)
             header.append(", ");
-            counter++;
-        }
+
+        counter++;
     }
 
-    header.append("};\n");
+    header.append("\n};\n");
     return header;
 }
 
