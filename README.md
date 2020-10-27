@@ -7,7 +7,7 @@ $ file2header.exe input_file.exe output_file.h
 ```
 
 # Output example
-```
+```c++
 #include <cstdint>
 
 const uint8_t image[] = 
