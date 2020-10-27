@@ -82,7 +82,7 @@ std::string generate_header(std::vector<uint8_t>& in_buffer, int bytes_per_line)
         }
     }
 
-    header.append("}\n");
+    header.append("};\n");
     return header;
 }
 
