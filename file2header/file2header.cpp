@@ -55,6 +55,7 @@ bool write_file_text(const std::string& path, std::string& in_buffer)
 std::string generate_header(std::vector<uint8_t>& in_buffer, int bytes_per_line)
 {
     std::string header;
+    header.append("#pragma once\n");
     header.append("#include <cstdint>\n\n");
     header.append("const uint8_t image[] = \n");
     header.append("{");
