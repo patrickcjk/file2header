@@ -1,9 +1,13 @@
 # file2header
-Convert any binary to a C-style array
+Convert any binary to a C-style array (generating an header file)
 
 # Usage
 ```sh
-$ file2header.exe input_file.exe output_file.h
+$ file2header <input_binary.exe> <output_header.h> <bytes_per_line>
+$ <input_binary.exe>    Path to any binary file
+$ <output_header.h>     Path to output file
+$ <bytes_per_line>      Optionnal: Number of bytes for each line (default: 25)
+$ Example: file2header image.exe image.h 30
 ```
 
 # Output example
