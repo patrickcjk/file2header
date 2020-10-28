@@ -14,6 +14,7 @@ Example: file2header image.exe image.h 30
 
 # Output example
 ```c++
+#pragma once
 #include <cstdint>
 
 const uint8_t image[] = 
