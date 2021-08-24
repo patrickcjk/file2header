@@ -19,7 +19,7 @@ bool read_file_binary(const std::string& path, std::vector<uint8_t>& out_buffer)
         return false;
 
     file_stream.seekg(0, file_stream.end);
-    int length = file_stream.tellg();
+    auto length = file_stream.tellg();
     file_stream.seekg(0, file_stream.beg);
 
     out_buffer.resize(length);
